@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/main.css" />
 
-    <script src="./scripts/main.js"></script>
+    <script defer src="./scripts/main.js"></script>
   </head>
   <body class="body text-neutral-900 bg-neutral-100">
     <header
-      class="primary-header container-fluid"
+      class="primary-header | bg-neutral-100"
       data-element="primary-header"
     >
       <a href="#" class="btn btn-brand">
@@ -35,11 +35,13 @@
         <img
           src="./images/icon-menu.svg"
           alt=""
-          data-element="primary-header-icon"
+          class="primary-header-menu-icon"
+          data-element="primary-header-menu-icon"
         />
         <img
           src="./images/icon-menu-close.svg"
           alt=""
+          class="primary-header-close-icon"
           data-element="primary-header-close-icon"
         />
       </button>
@@ -64,6 +66,6 @@
         </ul>
       </nav>
     </header>
-    <main class="primary-content"></main>
+    <main class="primary-content bg-gray-600"></main>
   </body>
 </html>
