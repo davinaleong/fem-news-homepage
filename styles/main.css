@@ -3,6 +3,8 @@
     - Content
       - Content - General Styling
       - Content - Layout
+      - Content - Primary Header
+      - Content - Primary Footer
     - Utility
       - Utility - Colours
       - Utility - Background Colours
@@ -21,7 +23,7 @@
 
 @font-face {
   font-family: "Inter";
-  src: url(./../fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype");
+  src: url(./../fonts/Inter-VariableFont_slntwght.ttf) format("truetype");
 }
 
 /** Root **/
@@ -102,6 +104,10 @@ body {
   min-height: 100vh;
 }
 
+.body {
+  position: relative;
+}
+
 .body-grid {
   display: grid;
   grid-template-rows: repeat(2, max-content);
@@ -153,9 +159,16 @@ b {
 
 .container {
   --container-width: 1110px;
+  --container-padding: var(--size-200);
 
-  max-width: var(--container-width);
-  padding-inline: var(--size-400);
+  max-width: min(var(--container-width), 100% - (var(--container-padding) * 2));
+  margin-inline: auto;
+}
+
+.container-fluid {
+  --container-padding: var(--size-200);
+
+  max-width: calc(100% - (var(--container-padding) * 2));
   margin-inline: auto;
 }
 
@@ -225,15 +238,41 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .btn-link {
-  --btn-clr: var(--clr-neutral-400);
+  --btn-clr: var(--clr-neutral-900);
   --btn-bg-clr: transparent;
   --btn-border-clr: transparent;
 
-  --btn-hover-clr: var(--clr-neutral-900);
+  --btn-hover-clr: var(--clr-secondary-400);
   --btn-hover-bg-clr: transparent;
   --btn-hover-border-clr: transparent;
 
-  font-weight: var(--fw-bold);
+  --btn-padding: 0;
+
+  text-decoration: none;
+}
+
+.btn-brand {
+  --btn-clr: transparent;
+  --btn-bg-clr: transparent;
+  --btn-border-clr: transparent;
+
+  --btn-hover-clr: transparent;
+  --btn-hover-bg-clr: transparent;
+  --btn-hover-border-clr: transparent;
+
+  --btn-padding: 0;
+}
+
+.btn-primary-header-toggle {
+  --btn-clr: transparent;
+  --btn-bg-clr: transparent;
+  --btn-border-clr: transparent;
+
+  --btn-hover-clr: transparent;
+  --btn-hover-bg-clr: transparent;
+  --btn-hover-border-clr: transparent;
+
+  --btn-padding: 0;
 }
 
 /** Content - Layout **/
@@ -244,6 +283,49 @@ a:where(:hover, :focus, :focus-visible) {
   justify-items: center;
   align-items: center;
 }
+
+.nav-list {
+  display: flex;
+  align-items: stretch;
+  gap: var(--size-400);
+}
+
+.nav-list > .nav-list__item {
+  display: grid;
+  align-items: stretch;
+}
+
+/** Content - Primary Header **/
+.primary-header {
+  position: sticky;
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.primary-navigation {
+  display: grid;
+  align-items: stretch;
+}
+
+.primary-header > * {
+  padding-block: var(--size-200);
+}
+
+.primary-header .btn-brand {
+  justify-self: start;
+}
+
+.primary-header .primary-navigation {
+  justify-self: end;
+}
+
+[data-element="primary-header-toggle"] {
+  display: none;
+}
+
+/** Content - Primary Footer **/
 
 /** Content - End **/
 
