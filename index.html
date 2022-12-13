@@ -3,17 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Frontend Mentor | News homepage</title>
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/main.css">
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
 
     <script src="./scripts/main.js"></script>
   </head>
-  <body>
-    
+  <body class="text-neutral-900 bg-neutral-100">
+    <header class="primary-header" data-element="primary-header">
+      <a href="#" class="btn btn-brand">
+        <img src="./images/logo.svg" alt="" />
+      </a>
+
+      <button
+        class="btn btn-primary-header-toggle"
+        type="button"
+        data-element="primary-header-toggle"
+      >
+        <img
+          src="./images/icon-menu.svg"
+          alt=""
+          data-element="primary-header-icon"
+        />
+        <img
+          src="./images/icon-menu-close.svg"
+          alt=""
+          data-element="primary-header-close-icon"
+        />
+      </button>
+
+      <nav class="primary-navigation">
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="#" class="btn btn-nav">Home</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="btn btn-nav">New</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="btn btn-nav">Popular</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="btn btn-nav">Trending</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="btn btn-nav">Categories</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="primary-content"></main>
   </body>
 </html>
